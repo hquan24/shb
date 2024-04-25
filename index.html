@@ -1,0 +1,2213 @@
+
+<!DOCTYPE html>
+<html lang="vi" prefix="og: https://ogp.me/ns#" class="loading-site no-js">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-35JPFKL90N"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35JPFKL90N');
+</script>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<link rel="pingback" href="https://shbet88.game/xmlrpc.php" />
+	<script type="rocketlazyloadscript" src="https://shbet88.game/wp-content/themes/flatsome/assets/js/jquery_3.6.0_jquery.min.js" defer></script>
+	
+	<script type="rocketlazyloadscript">(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+
+            <script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+                var ctPublicFunctions = {"_ajax_nonce":"9f7c6a86a5","_rest_nonce":"de2448d837","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/shbet88.game\/wp-json\/","data__cookies_type":"none","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk","cookiePrefix":"","wprocket_detected":true}
+            </script>
+        
+            <script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer data-cookieconsent="ignore">
+                var ctPublic = {"_ajax_nonce":"9f7c6a86a5","settings__forms__check_internal":0,"settings__forms__check_external":0,"settings__forms__search_test":1,"blog_home":"https:\/\/shbet88.game\/","pixel__setting":"3","pixel__enabled":true,"pixel__url":"https:\/\/moderate4-v4.cleantalk.org\/pixel\/b65830a29611e2d84b37b21c97b78a77.gif","data__email_check_before_post":1,"data__cookies_type":"none","data__key_is_ok":true,"data__visible_fields_required":true,"data__to_local_storage":{"apbct_cookies_test":"%7B%22cookies_names%22%3A%5B%22apbct_timestamp%22%2C%22apbct_site_landing_ts%22%5D%2C%22check_value%22%3A%22299e17a0af780959ba0510f84186c8cc%22%7D","apbct_site_landing_ts":"1714034925","apbct_urls":"{\"shbet88.game\/\":[1714036667,1714036670,1714036671,1714036710,1714036712],\"shbet88.game\/casino\/\":[1714034931],\"shbet88.game\/the-thao\/\":[1714034945],\"shbet88.game\/da-ga\/\":[1714036227],\"shbet88.game\/khuyen-mai\/\":[1714036266]}"},"wl_brandname":"Anti-Spam by CleanTalk","wl_brandname_short":"CleanTalk","ct_checkjs_key":"bb40828437cd8616b026607b6febc60075aa5cb2beb7418407df327f457c03ec","emailEncoderPassKey":"07749713bc6e0185546636b58662bb38"}
+            </script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+<title>SHBET✔️Trang Chủ Chính Thức SHBET.COM</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&#038;display=swap" /></noscript>
+<meta name="description" content="SHBET là thành viên của OKVIP , Shbet có những trò chơi hấp dẫn như : thể thao , game casino , xổ số , Shbet có đội ngũ CSKH chất lượng"/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://shbet86.com/?a=2504031" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="SHBET✔️Trang Chủ Chính Thức SHBET.COM" />
+<meta property="og:description" content="SHBET là thành viên của OKVIP , Shbet có những trò chơi hấp dẫn như : thể thao , game casino , xổ số , Shbet có đội ngũ CSKH chất lượng" />
+<meta property="og:url" content="https://shbet86.com/?a=2504031" />
+<meta property="og:site_name" content="SHBET" />
+<meta property="og:updated_time" content="2024-04-21T11:08:02+00:00" />
+<meta property="og:image" content="https://shbet88.game/wp-content/uploads/2023/10/nap-rut-tien-tai-shbet-bang-tai-khoan-ngan-hang-rat-thinh-hanh.jpg" />
+<meta property="og:image:secure_url" content="https://shbet88.game/wp-content/uploads/2023/10/nap-rut-tien-tai-shbet-bang-tai-khoan-ngan-hang-rat-thinh-hanh.jpg" />
+<meta property="og:image:width" content="800" />
+<meta property="og:image:height" content="400" />
+<meta property="og:image:alt" content="Nạp rút tiền tại SHBET bằng ngân hàng rất thịnh hành" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2023-10-26T13:14:33+00:00" />
+<meta property="article:modified_time" content="2024-04-21T11:08:02+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SHBET✔️Trang Chủ Chính Thức SHBET.COM" />
+<meta name="twitter:description" content="SHBET là thành viên của OKVIP , Shbet có những trò chơi hấp dẫn như : thể thao , game casino , xổ số , Shbet có đội ngũ CSKH chất lượng" />
+<meta name="twitter:image" content="https://shbet88.game/wp-content/uploads/2023/10/nap-rut-tien-tai-shbet-bang-tai-khoan-ngan-hang-rat-thinh-hanh.jpg" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="admin" />
+<meta name="twitter:label2" content="Time to read" />
+<meta name="twitter:data2" content="34 minutes" />
+<script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"https://shbet86.com/?a=2504031/#person","name":"SHBET","url":"https://shbet88.game","logo":{"@type":"ImageObject","@id":"https://shbet88.game/#logo","url":"https://shbet88.game/wp-content/uploads/2023/11/logo.png","contentUrl":"https://shbet88.game/wp-content/uploads/2023/11/logo.png","caption":"SHBET","inLanguage":"vi","width":"1024","height":"447"},"image":{"@id":"https://shbet88.game/#logo"}},{"@type":"WebSite","@id":"https://shbet88.game/#website","url":"https://shbet88.game","name":"SHBET","alternateName":"SHBET","publisher":{"@id":"https://shbet88.game/#person"},"inLanguage":"vi","potentialAction":{"@type":"SearchAction","target":"https://shbet88.game/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"ImageObject","@id":"https://shbet88.game/wp-content/uploads/2023/10/nap-rut-tien-tai-shbet-bang-tai-khoan-ngan-hang-rat-thinh-hanh.jpg","url":"https://shbet88.game/wp-content/uploads/2023/10/nap-rut-tien-tai-shbet-bang-tai-khoan-ngan-hang-rat-thinh-hanh.jpg","width":"800","height":"400","caption":"N\u1ea1p r\u00fat ti\u1ec1n t\u1ea1i SHBET b\u1eb1ng ng\u00e2n h\u00e0ng r\u1ea5t th\u1ecbnh h\u00e0nh","inLanguage":"vi"},{"@type":"WebPage","@id":"https://shbet88.game/#webpage","url":"https://shbet88.game/","name":"SHBET\u2714\ufe0fTrang Ch\u1ee7 Ch\u00ednh Th\u1ee9c SHBET.COM","datePublished":"2023-10-26T13:14:33+00:00","dateModified":"2024-04-21T11:08:02+00:00","about":{"@id":"https://shbet88.game/#person"},"isPartOf":{"@id":"https://shbet88.game/#website"},"primaryImageOfPage":{"@id":"https://shbet88.game/wp-content/uploads/2023/10/nap-rut-tien-tai-shbet-bang-tai-khoan-ngan-hang-rat-thinh-hanh.jpg"},"inLanguage":"vi"},{"@type":"Person","@id":"https://shbet88.game/author/admin/","name":"admin","url":"https://shbet88.game/author/admin/","image":{"@type":"ImageObject","@id":"https://secure.gravatar.com/avatar/67b156305490cfbc6627b06acc229266?s=96&amp;d=mm&amp;r=g","url":"https://secure.gravatar.com/avatar/67b156305490cfbc6627b06acc229266?s=96&amp;d=mm&amp;r=g","caption":"admin","inLanguage":"vi"},"sameAs":["https://shbet88.game"]},{"@type":"NewsArticle","headline":"SHBET\u2714\ufe0fTrang Ch\u1ee7 Ch\u00ednh Th\u1ee9c SHBET.COM","keywords":"shbet, trang ch\u1ee7 shbet, khuy\u1ebfn m\u00e3i shbet","datePublished":"2023-10-26T13:14:33+00:00","dateModified":"2024-04-21T11:08:02+00:00","author":{"@id":"https://shbet88.game/author/admin/","name":"admin"},"publisher":{"@id":"https://shbet88.game/#person"},"description":"SHBET l\u00e0 th\u00e0nh vi\u00ean c\u1ee7a OKVIP , Shbet c\u00f3 nh\u1eefng tr\u00f2 ch\u01a1i h\u1ea5p d\u1eabn nh\u01b0 : th\u1ec3 thao , game casino , x\u1ed5 s\u1ed1 , Shbet c\u00f3 \u0111\u1ed9i ng\u0169 CSKH ch\u1ea5t l\u01b0\u1ee3ng","copyrightYear":"2024","copyrightHolder":{"@id":"https://shbet88.game/#person"},"name":"SHBET\u2714\ufe0fTrang Ch\u1ee7 Ch\u00ednh Th\u1ee9c SHBET.COM","@id":"https://shbet88.game/#richSnippet","isPartOf":{"@id":"https://shbet88.game/#webpage"},"image":{"@id":"https://shbet88.game/wp-content/uploads/2023/10/nap-rut-tien-tai-shbet-bang-tai-khoan-ngan-hang-rat-thinh-hanh.jpg"},"inLanguage":"vi","mainEntityOfPage":{"@id":"https://shbet88.game/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//moderate.cleantalk.org' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel='prefetch' href='https://shbet88.game/wp-content/themes/flatsome/assets/js/flatsome.js?ver=039f9485eef603e7c53a' />
+<link rel='prefetch' href='https://shbet88.game/wp-content/themes/flatsome/assets/js/chunk.slider.js?ver=3.18.1' />
+<link rel='prefetch' href='https://shbet88.game/wp-content/themes/flatsome/assets/js/chunk.popups.js?ver=3.18.1' />
+<link rel='prefetch' href='https://shbet88.game/wp-content/themes/flatsome/assets/js/chunk.tooltips.js?ver=3.18.1' />
+<link rel="alternate" type="application/rss+xml" title="Dòng thông tin SHBET &raquo;" href="https://shbet88.game/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SHBET &raquo; Dòng bình luận" href="https://shbet88.game/comments/feed/" />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<style id='wp-block-library-inline-css' type='text/css'>
+:root{--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,161;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px;--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:#9747ff}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip:auto!important;-webkit-clip-path:none;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+</style>
+<link rel='stylesheet' id='ct_public_css-css' href='https://shbet88.game/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-public.min.css?ver=6.31' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='custom-get-code-css' href='https://shbet88.game/wp-content/cache/min/1/wp-content/themes/flatsome/assets/css/get-code-shbet.css?ver=1713022526' type='text/css' media='all' />
+<link rel='stylesheet' id='sweetalert2-css-css' href='https://shbet88.game/wp-content/themes/flatsome/assets/css/sweetalert2.min.css?ver=2023' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='flatsome-main-css' href='https://shbet88.game/wp-content/cache/min/1/wp-content/themes/flatsome/assets/css/flatsome.css?ver=1713022526' type='text/css' media='all' />
+<style id='flatsome-main-inline-css' type='text/css'>
+@font-face {
+				font-family: "fl-icons";
+				font-display: block;
+				src: url(https://shbet86.com/?a=2504031/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot?v=3.18.1);
+				src:
+					url(https://shbet86.com/?a=2504031/wp-content/themes/flatsome/assets/css/icons/fl-icons.eot#iefix?v=3.18.1) format("embedded-opentype"),
+					url(https://shbet86.com/?a=2504031/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff2?v=3.18.1) format("woff2"),
+					url(https://shbet86.com/?a=2504031/wp-content/themes/flatsome/assets/css/icons/fl-icons.ttf?v=3.18.1) format("truetype"),
+					url(https://shbet86.com/?a=2504031/wp-content/themes/flatsome/assets/css/icons/fl-icons.woff?v=3.18.1) format("woff"),
+					url(https://shbet86.com/?a=2504031/wp-content/themes/flatsome/assets/css/icons/fl-icons.svg?v=3.18.1#fl-icons) format("svg");
+			}
+</style>
+<link rel='stylesheet' id='flatsome-style-css' href='https://shbet88.game/wp-content/themes/flatsome-child/style.css?ver=3.0' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://shbet88.game/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://shbet88.game/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<script type="text/javascript" data-pagespeed-no-defer src="https://shbet88.game/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.31" id="ct_public_functions-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://shbet88.game/wp-content/cache/min/1/ct-bot-detector-wrapper.js?ver=1713022527" id="ct_bot_detector-js" defer></script>
+<link rel="https://api.w.org/" href="https://shbet88.game/wp-json/" /><link rel="alternate" type="application/json" href="https://shbet88.game/wp-json/wp/v2/pages/9" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://shbet88.game/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.5.2" />
+<link rel='shortlink' href='https://shbet88.game/' />
+<link rel="alternate" type="application/json+oembed" href="https://shbet88.game/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fshbet88.game%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://shbet88.game/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fshbet88.game%2F&#038;format=xml" />
+<style>.bg{opacity: 0; transition: opacity 1s; -webkit-transition: opacity 1s;} .bg-loaded{opacity: 1;}</style><script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type": "Casino","@id":"https://shbet86.com/?a=2504031/
+#casino","name":"SHBET","legalName":"SHBET Trang Chính Thức | Đăng Nhập & Đăng Ký SHBET","description":"SHBET là thành viên Liên Minh OKVIP, thuộc top đầu những nhà cái uy tín nhất thị trường Việt Nam. SHBET cung cấp đa dạng các trò chơi như casino, nổ hũ, bắn cá, thể thao, game bài, đá gà,...","url":"https://shbet88.game/
+","address": {
+"@type": "PostalAddress","streetAddress":"37 Ng. 58 P. Trần Bình, Mai Dịch","addressLocality":"Cầu giấy","addressRegion":"Hà Nội","postalCode":"100000","addressCountry": {
+"@type": "Country",
+"name": "Việt Nam"
+}},"numberOfEmployees": {
+"@type": "QuantitativeValue",
+"value": "20"
+},"sameAs":["https://www.facebook.com/shbet24hcom/","https://dev.to/shbet24hcom","https://www.pinterest.com/shbet24hcom/","https://www.youtube.com/@shbet24hcom/about"],"currenciesAccepted": "VND",
+"paymentAccepted": ["Cash", "Credit Card"],
+"priceRange": "1 - 100000","email":"banhquochanh2738@gmail.com","knowsLanguage": ["vi", "en"],
+"openingHoursSpecification": {
+"@type": "OpeningHoursSpecification",
+"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday"],
+"opens": "00:00",
+"closes": "24:00"
+},
+"foundingLocation": {
+"@type": "Place","@id":"https://shbet86.com/?a=2504031/
+#place","address": {
+"@type": "PostalAddress","streetAddress":"37 Ng. 58 P. Trần Bình, Mai Dịch","addressLocality":"Cầu giấy","addressRegion":"Hà Nội","postalCode":"100000","addressCountry": {
+"@type": "Country",
+"name": "Việt Nam"
+}}},"location": {
+"@type": "PostalAddress","@id":"https://shbet86.com/?a=2504031/
+#postaladdress","streetAddress":"37 Ng. 58 P. Trần Bình, Mai Dịch","addressLocality":"Cầu giấy","addressRegion":"Hà Nội","postalCode":"100000","addressCountry": {
+"@type": "Country",
+"name": "Việt Nam"
+}},"contactPoint": {
+"@type": "ContactPoint","email":"banhquochanh2738@gmail.com","areaServed": "VN"},"image": {
+"@type": "ImageObject","url":"https://shbet88.game/wp-content/uploads/2023/10/logo-slogan.83c41ad25b6ca0cdc03b-1024x513.png","width":"1024","height":"513"}},"logo": {
+"@type": "ImageObject","url":"https://shbet88.game/wp-content/uploads/2023/10/logo-slogan.83c41ad25b6ca0cdc03b-1024x513.png","width":"1024","height":"513"}}
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-B6J6BEDB3K"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B6J6BEDB3K');
+</script>
+<link rel="icon" href="https://shbet88.game/wp-content/uploads/2023/10/cropped-e5b773c9df86e7d76b7bf407b85a4197_e427d755d3182507e11618f9bacff83c-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://shbet88.game/wp-content/uploads/2023/10/cropped-e5b773c9df86e7d76b7bf407b85a4197_e427d755d3182507e11618f9bacff83c-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://shbet88.game/wp-content/uploads/2023/10/cropped-e5b773c9df86e7d76b7bf407b85a4197_e427d755d3182507e11618f9bacff83c-180x180.png" />
+<meta name="msapplication-TileImage" content="https://shbet88.game/wp-content/uploads/2023/10/cropped-e5b773c9df86e7d76b7bf407b85a4197_e427d755d3182507e11618f9bacff83c-270x270.png" />
+<style id="custom-css" type="text/css">:root {--primary-color: #446084;--fs-color-primary: #446084;--fs-color-secondary: #d26e4b;--fs-color-success: #7a9c59;--fs-color-alert: #b20000;--fs-experimental-link-color: #334862;--fs-experimental-link-color-hover: #111;}.tooltipster-base {--tooltip-color: #fff;--tooltip-bg-color: #000;}.off-canvas-right .mfp-content, .off-canvas-left .mfp-content {--drawer-width: 300px;}.container-width, .full-width .ubermenu-nav, .container, .row{max-width: 1250px}.row.row-collapse{max-width: 1220px}.row.row-small{max-width: 1242.5px}.row.row-large{max-width: 1280px}.header-main{height: 90px}#logo img{max-height: 90px}#logo{width:200px;}.header-bottom{min-height: 55px}.header-top{min-height: 30px}.transparent .header-main{height: 90px}.transparent #logo img{max-height: 90px}.has-transparent + .page-title:first-of-type,.has-transparent + #main > .page-title,.has-transparent + #main > div > .page-title,.has-transparent + #main .page-header-wrapper:first-of-type .page-title{padding-top: 140px;}.header.show-on-scroll,.stuck .header-main{height:70px!important}.stuck #logo img{max-height: 70px!important}.header-bg-color {background-color: rgba(255,255,255,0.9)}.header-bottom {background-color: #f1f1f1}.header-main .nav > li > a{line-height: 16px }.stuck .header-main .nav > li > a{line-height: 50px }.header-bottom-nav > li > a{line-height: 16px }@media (max-width: 549px) {.header-main{height: 70px}#logo img{max-height: 70px}}body{font-size: 100%;}@media screen and (max-width: 549px){body{font-size: 100%;}}body{font-family: Roboto, sans-serif;}body {font-weight: 400;font-style: normal;}.nav > li > a {font-family: Roboto, sans-serif;}.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-family: Roboto, sans-serif;}.nav > li > a,.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-weight: 700;font-style: normal;}h1,h2,h3,h4,h5,h6,.heading-font, .off-canvas-center .nav-sidebar.nav-vertical > li > a{font-family: Roboto, sans-serif;}h1,h2,h3,h4,h5,h6,.heading-font,.banner h1,.banner h2 {font-weight: 400;font-style: normal;}.alt-font{font-family: "Dancing Script", sans-serif;}.alt-font {font-weight: 400!important;font-style: normal!important;}.absolute-footer, html{background-color: #ffffff}.nav-vertical-fly-out > li + li {border-top-width: 1px; border-top-style: solid;}/* Custom CSS */<script type="application/ld+json">{"@context": "http://schema.org","@type": "BreadcrumbList","itemListElement": [[{"@type": "ListItem","position": 1,"name": "SHBET","item": "https://45.119.82.206/"}],[{"@type": "ListItem","position": 2,"name": "100% lì xì miễn phí","item": "https://shbet88.game/tin-tuc/"}]]} </script>.label-new.menu-item > a:after{content:"New";}.label-hot.menu-item > a:after{content:"Hot";}.label-sale.menu-item > a:after{content:"Sale";}.label-popular.menu-item > a:after{content:"Popular";}</style>		<style type="text/css" id="wp-custom-css">
+			.px-0{
+	padding-left:0px;
+	padding-right:0px;
+}
+.py-0{
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.pb-2{
+	padding-bottom:10px;
+}
+#header #masthead{
+	background: linear-gradient(360deg, #CFF3FF 0%, #FFFFFF 44.72%),
+linear-gradient(0deg, #6BB0C8, #6BB0C8);
+}
+#header #wide-nav{
+	background: linear-gradient(180deg, #143862 0%, #060F2B 100%);
+}
+#header #wide-nav .container .flex-left{
+	width:100%;
+}
+#header #wide-nav .header-nav{
+	width:100%;
+	justify-content:space-between;
+}
+#header #wide-nav .header-nav > .menu-item > a{
+	color: #fff;
+	flex-flow:column;
+	align-items:center;
+	justify-content:space-between;
+	gap:5px;
+}
+#header #wide-nav .header-nav > .menu-item > a img{
+	height:30px;
+	width:30px;
+	object-fit:contain;
+}
+.header-button .button{
+	background:#6BB0C8;
+	color:#fff;
+	border: 1.07px solid;
+border-image-source: linear-gradient(180deg, #6BB0C8 0%, #CFF3FF 28.37%, #6BB0C8 58.85%, #CFF3FF 70.71%, #6BB0C8 100%);
+}
+.header-button .button:hover{
+	background:#1F607D;
+}
+.header-button .button:after{
+	background: linear-gradient(180deg, #6BB0C8 0%, #CFF3FF 28.37%, #6BB0C8 58.85%, #CFF3FF 70.71%, #6BB0C8 100%)!important;
+	content:"";
+  position: absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	border-radius:50px;
+	inset: 5px 5px 0px 0px;
+  z-index: -1;
+}
+#wrapper{
+	background-image:url("https://shbet88.game/wp-content/uploads/2023/12/image-bg-home-scaled.webp");
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#main{
+	background-color:#fff0;
+}
+.block-page{
+	padding:0px!important;
+}
+.align-middle{
+	margin:0 auto!important;
+}
+.button-service{
+	padding:10px 20px;
+	position:absolute;
+	top:-35px;
+	right:7%;
+	left:7%;
+	background: linear-gradient(265.38deg, #357E9F -0.05%, #6BB0C8 56.25%);
+	border-radius:15px;
+}
+.button-service:before{
+	background: linear-gradient(180deg, #6BB0C8 0%, #CFF3FF 28.37%, #6BB0C8 58.85%, #CFF3FF 70.71%, #6BB0C8 100%)!important;
+	content:"";
+  position: absolute;
+	width:100%;
+	height:100%;
+	border-radius:15px;
+	inset: 7px 5px 0px 0px;
+  z-index: -1;
+}
+.button-service span{
+	color:#fff;
+	font-size:30px;
+}
+.row-service > .col-inner{
+	z-index: 0;
+	padding:80px 10px 0px 10px!important;
+}
+.update-promo{
+	position:absolute;
+	min-width:345px;
+	padding:4px 20px 8px 20px!important;
+	border-radius:15px;
+	top: calc(50% - 26px);
+	left: calc(0% - 148px);
+	background: linear-gradient(270deg, #6BB0C8 0%, #CFF3FF 12.15%, #6BB0C8 21.07%, #CFF3FF 51.66%, #6BB0C8 79.71%, #CFF3FF 89.36%, #6BB0C8 100%);
+	z-index:0;
+	transform:rotate(270deg);
+}
+.update-promo:after{
+	content:"";
+  position: absolute;
+	width:100%;
+	height:100%;
+	background: linear-gradient(265.38deg, #357E9F -0.05%, #6BB0C8 56.25%);
+	border-radius:15px;
+	inset: -3px 5px 0px 0px;
+  z-index: -1;
+}
+.update-promo span{
+	color:#fff;
+	font-size:15.3px;
+}
+.box-update-promo > .col-inner{
+	z-index: 0;
+	padding: 10px;
+	min-height: 345px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.box-update-promo > .col-inner .row{
+	margin-left:50px;
+	margin-bottom:0px!important;
+}
+.box-update-promo > .col-inner .row .medium-6{
+	padding:10px;
+}
+.title-shbet{
+	margin-bottom:0px;
+}
+.title-shbet b{
+	display:none;
+}
+.title-shbet h2{
+	justify-content:center;
+}
+.title-shbet h2:after{
+	content:"";
+	min-width:370px;
+	height:35px;
+	background-image:url("https://shbet88.game/wp-content/uploads/2023/10/Union-1.png");
+	background-repeat:no-repeat;
+	position: absolute;
+	left: 0;
+	background-position: right;
+	background-size: contain;
+}
+.title-shbet h2:before{
+	content:"";
+	min-width:370px;
+	height:35px;
+	background-repeat:no-repeat;
+	background-image:url("https://shbet88.game/wp-content/uploads/2023/10/Union-2.png");
+	position: absolute;
+	right: 0;
+	background-position: left;
+	background-size: contain;
+}
+.bfaf1 h2:before{
+	background-image:url("https://shbet88.game/wp-content/uploads/2023/10/Union-2-1.png");
+	min-width:500px!important;
+}
+.bfaf1 h2:after{
+	background-image:url("https://shbet88.game/wp-content/uploads/2023/10/Union-3.png");
+	min-width:500px!important;
+}
+.post-content{
+	background: linear-gradient(0deg, rgba(19, 105, 143, 0.65), rgba(19, 105, 143, 0.65)),
+linear-gradient(0deg, #FFFFFF, #FFFFFF);
+	border-radius:16px;
+	min-height:500px;
+	overflow:auto;
+	margin-bottom:30px;
+	padding:20px 0;
+}
+.lkn-main{
+	background:unset;
+	border:unset;
+	margin:0px;
+}
+.lkn-main .button{
+	margin:0px;
+	border:initial;
+}
+.lkn-main .primary{
+	background-color:unset;
+}
+.lkn-main > .col-inner:after{
+	content:"";
+	position:absolute;
+	left:-7px;
+	top:-7px;
+	width:calc(100% + 14px);
+	height:calc(100% + 14px);
+	border: 3px solid;
+	background-image: linear-gradient(180deg, #6BB0C8 0%, #CFF3FF 28.37%, #6BB0C8 58.85%, #CFF3FF 70.71%, #6BB0C8 100%);	
+	z-index:-1;
+	border-radius:40px;
+}
+.lkn-main > .col-inner{
+	background: linear-gradient(265.56deg, #357E9F 1.82%, #6BB0C8 118.95%),
+linear-gradient(180deg, #6BB0C8 0%, #CFF3FF 28.37%, #6BB0C8 58.85%, #CFF3FF 70.71%, #6BB0C8 100%);
+	border-radius:40px;
+	min-height:50px;
+	margin-bottom:20px;
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.lkn-main .main-button{
+	font-size:21px;
+	font-weight:500;
+} 
+.lkn-main .sub-button{
+	margin-right:6px;
+	border-radius:33px!important;
+	color: #1F607D;
+	background: linear-gradient(360deg, #CFF3FF 0%, #FFFFFF 44.72%);
+}
+.lkn-main:hover{
+	box-shadow:unset!important;
+}
+.lkn-main .button:hover{
+	box-shadow:unset!important;
+}
+.partner-block{
+	padding:20px 0px!important;
+}
+.partner-block .col{
+	padding:0px;
+}
+#footer .ux-menu-link{
+	color:#fff;
+}
+.policy-block .col{
+	flex-basis:20%;
+	max-width:20%;
+}
+.policy-block .col h2{
+	font-size:20px;
+}
+.seeMorebtn{
+	cursor:pointer;
+}
+.footer-primary{
+	color:#1F607D;
+}
+@media only screen and (max-width: 500px) {
+	#masthead .hide-for-medium:nth-child(4){
+			display:block !important;
+	}
+	#masthead #logo{
+			min-width:33%;
+			order:4;
+	}
+	#masthead .hide-for-medium:nth-child(4){
+			display:block !important;
+			min-width:145px;
+			order: 4;
+	}
+	#masthead .hide-for-medium:nth-child(4) .header-nav{
+			flex-direction:column!important;
+			gap:10px;
+	}
+	#masthead .hide-for-medium:nth-child(4) .header-nav .header-button .button{
+			font-size:10px;
+			min-width:120px;
+	}
+	#masthead .hide-for-medium:nth-child(4) .header-nav .header-button-2{
+			margin:0px 7px!important;
+	}
+	#masthead .hide-for-medium:nth-child(4) .header-nav .header-button-2 .button{
+			background:#1F607D
+	;
+	}
+	#masthead .icon-menu{
+			font-size:35px;
+			color: #1F607D;
+	}
+	#header #masthead{
+	background-color:#fff!important;
+			background-image:url("https://shbet88.game/wp-content/uploads/2023/12/Ellipse-mobile.webp")!important;
+			background-size: cover;
+			background-position: bottom;
+			background-repeat-x: no-repeat;
+			height: 140px;
+	}
+	.header-wrapper{
+			box-shadow:unset!important;
+	}
+	.block-page .row{
+			margin-left:0px!important;
+			margin-right:0px!important;
+	}
+	.block-page .box-large-title h2 {
+			font-size:25px!important;
+			font-weight:bolder;
+			margin-bottom:10px!important;
+	}
+	.block-page .box-large-title p {
+			color:#6BB0C8!important;
+			font-size:18px!important;
+			font-weight:bolder;
+			margin-bottom:10px!important;
+	}
+	.block-page .row-service .button-service{
+		padding:5px 0px;
+		top:-25px;
+	}
+	.block-page .row-service > .col-inner{
+		padding-bottom:10px!important;
+	}
+	.block-page .row-service .button-service span{
+			font-size:15px!important;
+	}
+	.block-page .row-service .col{
+			flex-basis:50%!important;
+		padding:5px;
+	}
+	.block-page .row-service > .col-inner {
+			padding-top:35px!important;
+	}
+	.block-page .box-update-promo .row .col{
+			flex-basis:25%;
+	}
+	.block-page .box-update-promo .update-promo{
+			transform:rotate(0deg);
+			top:-25px;
+			left:calc(50% - 155px);
+	}
+	.block-page .box-update-promo .update-promo span{
+		font-size:14px!important;
+	}
+	.block-page .box-update-promo .update-promo{
+			min-width:280px!important;
+	}
+	.block-page .box-update-promo{
+			margin-top:20px;
+	}
+	.block-page .box-update-promo > .col-inner{
+			min-height:115px;
+		padding-right:0px;
+		padding-left:0px;
+	}
+	.block-page .box-update-promo > .col-inner > .row{
+		margin-top: 25px;
+	}
+	.title-shbet h2{
+			font-size:15px
+	}
+	.title-shbet h2:before{
+					background-image: url(https://shbet88.game/wp-content/uploads/2023/10/Union-4.png)!important;
+			background-size:cover!important;
+			height:20px!important;
+			min-width: 60px!important;
+	}
+	.title-shbet h2:after{
+					background-image: url(https://shbet88.game/wp-content/uploads/2023/10/Union-5.png)!important;
+			background-size:cover!important;
+			height:20px!important;
+			min-width: 60px!important;
+	}
+	.lkn-main > .col-inner{
+		min-height:31px!important;
+	}
+	.lkn-main .main-button{
+			font-size:10px!important;
+	}
+	.lkn-main .sub-button{
+			font-size:10px!important;
+		margin-right:3px;
+	}
+	.bfaf1 h2:before{
+			min-width:140px!important;
+	}
+	.bfaf1 h2:after{
+			min-width:140px!important;
+	}
+	.row-main > .large-12 > .col-inner > .row{
+			margin-left:0px!important;
+			margin-right:0px!important;
+	}
+	.row-main > .large-12 > .col-inner > .row > .col:nth-child(2){
+			padding:0px;
+	}
+	.row-main > .large-12 > .col-inner > .row > .col:nth-child(2) img{
+			height:60px;
+			object-fit:cover;
+	}
+	.footer-primary{
+		font-size:12px;
+	}
+	.policy-block {
+		flex-direction:column;
+	}
+	.policy-block .col{
+		flex-basis:30%;
+		max-width:30%;
+	}
+	.policy-block .col h2{
+		font-size:10px;
+	}
+	.block-footcontent{
+		font-size: 6px;
+    padding: 0px 10px;
+	}
+	.block-footcontent .col{
+		flex-basis:25%;
+		
+	}
+	.txt-viewmore{
+		font-size:15px;
+	}
+	#footer .page-title-inner{
+		padding:0px;
+	}
+	#footer .page-title-inner .title-content{
+		display:none;
+	}
+} 
+wp-block-search__inside-wrapper {
+	color:red;
+}
+.widget-area{
+	
+}
+.taiapp {
+  display: inline-block;
+  background-color: #094763; /* Thay đổi màu nền */
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.taiapp:hover {
+  background-color: #0c5c8b; /* Thay đổi màu nền khi di chuột vào */
+}
+
+.taiapp:active {
+  background-color: #063c53; /* Thay đổi màu nền khi nhấn nút */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng nhấp nháy */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.taiapp:focus {
+  animation: pulse 1s infinite alternate; /* Áp dụng hiệu ứng nhấp nháy khi nút được focus */
+}		</style>
+		<style id="kirki-inline-styles">/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu72xMKTU1Kvnz.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu5mxMKTU1Kvnz.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7mxMKTU1Kvnz.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4WxMKTU1Kvnz.woff) format('woff');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7WxMKTU1Kvnz.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu7GxMKTU1Kvnz.woff) format('woff');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOmCnqEu92Fr1Mu4mxMKTU1Kg.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCRc-AMP6lbBP.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfABc-AMP6lbBP.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCBc-AMP6lbBP.woff) format('woff');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBxc-AMP6lbBP.woff) format('woff');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfCxc-AMP6lbBP.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfChc-AMP6lbBP.woff) format('woff');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/roboto/KFOlCnqEu92Fr1MmWUlfBBc-AMP6lQ.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}/* vietnamese */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/dancing-script/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSo3Rep6hNX6pmRMjLo.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/dancing-script/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSo3ROp6hNX6pmRMjLo.woff) format('woff');
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://shbet88.game/wp-content/fonts/dancing-script/If2cXTr6YS-zF4S-kcSWSVi_sxjsohD9F50Ruu7BMSo3Sup6hNX6pmRM.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}</style><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+	
+</head>
+
+<body class="home page-template-default page page-id-9 full-width header-shadow lightbox nav-dropdown-has-arrow nav-dropdown-has-shadow nav-dropdown-has-border">
+
+
+<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+<div id="wrapper">
+
+	
+	<header id="header" class="header has-sticky sticky-jump">
+		<div class="header-wrapper">
+			<div id="masthead" class="header-main hide-for-sticky">
+      <div class="header-inner flex-row container logo-left medium-logo-center" role="navigation">
+
+          <!-- Logo -->
+          <div id="logo" class="flex-col logo">
+            
+<!-- Header logo -->
+<a href="https://shbet86.com/?a=2504031/" title="SHBET - Thế Giới Casino Trong Tay Bạn" rel="home">
+		<img width="180" height="90" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20180%2090'%3E%3C/svg%3E" class="header_logo header-logo" alt="SHBET" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/logo-slogan-2.png"/><noscript><img width="180" height="90" src="https://shbet88.game/wp-content/uploads/2023/12/logo-slogan-2.png" class="header_logo header-logo" alt="SHBET"/></noscript><img  width="180" height="90" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20180%2090'%3E%3C/svg%3E" class="header-logo-dark" alt="SHBET" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/logo-slogan-2.png"/><noscript><img  width="180" height="90" src="https://shbet88.game/wp-content/uploads/2023/12/logo-slogan-2.png" class="header-logo-dark" alt="SHBET"/></noscript></a>
+          </div>
+
+          <!-- Mobile Left Elements -->
+          <div class="flex-col show-for-medium flex-left">
+            <ul class="mobile-nav nav nav-left ">
+              <li class="nav-icon has-icon">
+  		<a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color="" class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+
+		  <i class="icon-menu" ></i>
+		  		</a>
+	</li>
+            </ul>
+          </div>
+
+          <!-- Left Elements -->
+          <div class="flex-col hide-for-medium flex-left
+            flex-grow">
+            <ul class="header-nav header-nav-main nav nav-left  nav-uppercase" >
+                          </ul>
+          </div>
+
+          <!-- Right Elements -->
+          <div class="flex-col hide-for-medium flex-right">
+            <ul class="header-nav header-nav-main nav nav-right  nav-uppercase">
+              <li class="html custom html_topbar_left"><!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-35JPFKL90N"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-35JPFKL90N');
+</script></li><li class="html header-button-1">
+	<div class="header-button">
+		<a href="https://shbet86.com/?a=2504031" class="button primary is-large" rel="nofollow"  style="border-radius:99px;">
+    <span>Đăng Ký</span>
+  </a>
+	</div>
+</li>
+<li class="html header-button-2">
+	<div class="header-button">
+		<a href="https://shbet86.com/?a=2504031h" class="button primary is-large" rel="nofollow"  style="border-radius:99px;">
+    <span>Đăng Nhập</span>
+  </a>
+	</div>
+</li>
+            </ul>
+          </div>
+
+          <!-- Mobile Right Elements -->
+          <div class="flex-col show-for-medium flex-right">
+            <ul class="mobile-nav nav nav-right ">
+                          </ul>
+          </div>
+
+      </div>
+
+            <div class="container"><div class="top-divider full-width"></div></div>
+      </div>
+<div id="wide-nav" class="header-bottom wide-nav hide-for-medium">
+    <div class="flex-row container">
+
+                        <div class="flex-col hide-for-medium flex-left">
+                <ul class="nav header-nav header-bottom-nav nav-left  nav-uppercase">
+                    <li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-35 active menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031" aria-current="page" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-8.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-8.png" alt="" /></noscript>HOME</a></li>
+<li id="menu-item-520" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/casino/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-1.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-1.png" alt="" /></noscript>Casino</a></li>
+<li id="menu-item-590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-590 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/so-xo/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group.png" alt="" /></noscript>Sổ Xố</a></li>
+<li id="menu-item-589" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/the-thao/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group-1.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group-1.png" alt="" /></noscript>Thể Thao</a></li>
+<li id="menu-item-588" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-588 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/da-ga/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-2.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-2.png" alt="" /></noscript>Đá Gà</a></li>
+<li id="menu-item-583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-583 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/tro-choi/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-3.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-3.png" alt="" /></noscript>Trò Chơi</a></li>
+<li id="menu-item-582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-582 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/e-sport/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-4.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-4.png" alt="" /></noscript>E Sport</a></li>
+<li id="menu-item-587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/khuyen-mai/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-5.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-5.png" alt="" /></noscript>Khuyến Mãi</a></li>
+<li id="menu-item-586" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/dai-ly/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-6.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-6.png" alt="" /></noscript>Đại Lý</a></li>
+<li id="menu-item-585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/nhap-code/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-7.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-7.png" alt="" /></noscript>Nhập Code</a></li>
+<li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 menu-item-design-default has-icon-left"><a href="https://shbet86.com/?a=2504031/tin-tuc/" class="nav-top-link"><img class="ux-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Union.png" /><noscript><img class="ux-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Union.png" alt="" /></noscript>Tin Tức</a></li>
+                </ul>
+            </div>
+            
+            
+                        <div class="flex-col hide-for-medium flex-right flex-grow">
+              <ul class="nav header-nav header-bottom-nav nav-right  nav-uppercase">
+                                 </ul>
+            </div>
+            
+            
+    </div>
+</div>
+
+<div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div>		</div>
+	</header>
+
+	
+	<main id="main" class=""><div id="content" class="content-area page-wrapper" role="main">
+	<div class="row row-main">
+		<div class="large-12 col">
+			<div class="col-inner">
+
+				
+									
+						<style>
+ .wapper-text {<br />
+    height: 220px;<br />
+  }</p>
+<p>@media screen and (max-width: 1200px) {<br />
+ .wapper-text {<br />
+    height: 260px;<br />
+  }<br />
+}</p>
+<p>@media screen and (max-width: 658px) {<span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span><br />
+ .wapper-text {<br />
+    height: 360px;<br />
+  }<br />
+}<br />
+</style>
+	<section class="section block-page" id="section_1110872464">
+		<div class="bg section-bg fill bg-fill  bg-loaded" >
+
+			
+			
+			
+
+		</div>
+
+		
+
+		<div class="section-content relative">
+			
+<div class="row" style="max-width:1280px" id="row-1585318877">
+
+	<div id="col-266394579" class="col px-0 small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+	<div id="text-140986329" class="text box-large-title">
+		
+<div class="wapper-text">
+<p style="font-size: 48px; margin-bottom: 0px;">SHBET Trang Chính Thức | <a href="https://shbet86.com/?a=2504031" rel="nofollow noopener" target="_blank">Đăng Nhập</a> &amp; <a href="https://shbet86.com/?a=2504031" rel="nofollow noopener" target="_blank">Đăng Ký</a> SHBET</p>
+<p style="font-size: 23px;"><span class="txt-viewmore">SHBET là thành viên Liên Minh OKVIP, thuộc top đầu những nhà cái uy tín nhất thị trường Việt Nam. Hãy cùng tìm hiểu chi tiết hơn về SHBET qua bài viết bên dưới </span><span class="seeMorebtn">&#8230;Xem Thêm</span></p>
+</div>
+		
+<style>
+#text-140986329 {
+  text-align: center;
+  color: rgb(53, 126, 159);
+}
+#text-140986329 > * {
+  color: rgb(53, 126, 159);
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+</div>
+<div class="row align-middle align-center" style="max-width:1080px" id="row-1837972613">
+
+	<div id="col-2122654600" class="col row-service medium-8 small-12 large-8"  >
+				<div class="col-inner text-center" style="background-color:rgb(178, 235, 255);" >
+			
+			
+<div class="row"  id="row-1339792505">
+
+	<div id="col-1447624084" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_673384329">
+		<a class="" href="https://shbet.company/NAP-RUT" rel="Nofollow noopener" target="_blank">						<div class="img-inner dark" >
+			<img decoding="async" width="320" height="106" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20320%20106'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-srcset="https://shbet88.game/wp-content/uploads/2023/12/cskh24-7.png 320w, https://shbet88.game/wp-content/uploads/2023/12/cskh24-7-300x99.png 300w" data-lazy-sizes="(max-width: 320px) 100vw, 320px" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/cskh24-7.png" /><noscript><img decoding="async" width="320" height="106" src="https://shbet88.game/wp-content/uploads/2023/12/cskh24-7.png" class="attachment-large size-large" alt="" srcset="https://shbet88.game/wp-content/uploads/2023/12/cskh24-7.png 320w, https://shbet88.game/wp-content/uploads/2023/12/cskh24-7-300x99.png 300w" sizes="(max-width: 320px) 100vw, 320px" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_673384329 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+
+	<div id="col-1101425463" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_887554093">
+		<a class="" href="https://shbet.company/Facebooksh" rel="Nofollow noopener" target="_blank">						<div class="img-inner dark" >
+			<img decoding="async" width="320" height="106" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20320%20106'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-srcset="https://shbet88.game/wp-content/uploads/2023/12/fb-icon-web.webp 320w, https://shbet88.game/wp-content/uploads/2023/12/fb-icon-web-300x99.webp 300w" data-lazy-sizes="(max-width: 320px) 100vw, 320px" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/fb-icon-web.webp" /><noscript><img decoding="async" width="320" height="106" src="https://shbet88.game/wp-content/uploads/2023/12/fb-icon-web.webp" class="attachment-large size-large" alt="" srcset="https://shbet88.game/wp-content/uploads/2023/12/fb-icon-web.webp 320w, https://shbet88.game/wp-content/uploads/2023/12/fb-icon-web-300x99.webp 300w" sizes="(max-width: 320px) 100vw, 320px" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_887554093 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+
+	<div id="col-949006075" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_684500496">
+		<a class="" href="https://t.me/SHBETCSKH_bot" rel="Nofollow" target="_blank">						<div class="img-inner dark" >
+			<img fetchpriority="high" decoding="async" width="403" height="127" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20403%20127'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-srcset="https://shbet88.game/wp-content/uploads/2024/04/TELEGRAM-SHBET.png 403w, https://shbet88.game/wp-content/uploads/2024/04/TELEGRAM-SHBET-300x95.png 300w" data-lazy-sizes="(max-width: 403px) 100vw, 403px" data-lazy-src="https://shbet88.game/wp-content/uploads/2024/04/TELEGRAM-SHBET.png" /><noscript><img fetchpriority="high" decoding="async" width="403" height="127" src="https://shbet88.game/wp-content/uploads/2024/04/TELEGRAM-SHBET.png" class="attachment-large size-large" alt="" srcset="https://shbet88.game/wp-content/uploads/2024/04/TELEGRAM-SHBET.png 403w, https://shbet88.game/wp-content/uploads/2024/04/TELEGRAM-SHBET-300x95.png 300w" sizes="(max-width: 403px) 100vw, 403px" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_684500496 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+
+	<div id="col-1980389904" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_693742767">
+		<a class="" href="https://shbet.company/khieunaish1" rel="Nofollow noopener" target="_blank">						<div class="img-inner dark" >
+			<img decoding="async" width="320" height="106" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20320%20106'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-srcset="https://shbet88.game/wp-content/uploads/2023/12/khieu-nai-web.webp 320w, https://shbet88.game/wp-content/uploads/2023/12/khieu-nai-web-300x99.webp 300w" data-lazy-sizes="(max-width: 320px) 100vw, 320px" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/khieu-nai-web.webp" /><noscript><img decoding="async" width="320" height="106" src="https://shbet88.game/wp-content/uploads/2023/12/khieu-nai-web.webp" class="attachment-large size-large" alt="" srcset="https://shbet88.game/wp-content/uploads/2023/12/khieu-nai-web.webp 320w, https://shbet88.game/wp-content/uploads/2023/12/khieu-nai-web-300x99.webp 300w" sizes="(max-width: 320px) 100vw, 320px" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_693742767 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+</div>
+<a class="button primary is-link button-service"  >
+    <span>TRUNG TÂM DỊCH VỤ KHÁCH HÀNG</span>
+  </a>
+
+		</div>
+				
+<style>
+#col-2122654600 > .col-inner {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 30px 0px;
+  border-radius: 18px;
+}
+</style>
+	</div>
+
+	
+
+	<div id="col-363902582" class="col box-update-promo medium-4 small-12 large-4"  >
+				<div class="col-inner text-center" style="background-color:rgb(178, 235, 255);" >
+			
+			
+<div class="row"  id="row-263261274">
+
+	<div id="col-681766505" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_236151996">
+		<a class="" href="https://shbet.company/Kenhtelesh" rel="Nofollow noopener" target="_blank">						<div class="img-inner dark" >
+			<img decoding="async" width="118" height="119" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20118%20119'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/tele-web.webp" /><noscript><img decoding="async" width="118" height="119" src="https://shbet88.game/wp-content/uploads/2023/12/tele-web.webp" class="attachment-large size-large" alt="" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_236151996 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+
+	<div id="col-370894190" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1092922708">
+		<a class="" href="https://shbet.company/Youtubesh" rel="Nofollow noopener" target="_blank">						<div class="img-inner dark" >
+			<img decoding="async" width="118" height="119" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20118%20119'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/youtobe-web.webp" /><noscript><img decoding="async" width="118" height="119" src="https://shbet88.game/wp-content/uploads/2023/12/youtobe-web.webp" class="attachment-large size-large" alt="" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_1092922708 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+
+	<div id="col-205519026" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1705946082">
+		<a class="" href="tel:+84795899888" >						<div class="img-inner dark" >
+			<img decoding="async" width="118" height="119" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20118%20119'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/call-web.webp" /><noscript><img decoding="async" width="118" height="119" src="https://shbet88.game/wp-content/uploads/2023/12/call-web.webp" class="attachment-large size-large" alt="" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_1705946082 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+
+	<div id="col-1612745062" class="col medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_808191990">
+		<a class="" href="https://shbet.company/app" rel="nofollow noopener" target="_blank">						<div class="img-inner dark" >
+			<img decoding="async" width="117" height="120" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20117%20120'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/12/download-web.webp" /><noscript><img decoding="async" width="117" height="120" src="https://shbet88.game/wp-content/uploads/2023/12/download-web.webp" class="attachment-large size-large" alt="" /></noscript>						
+					</div>
+						</a>		
+<style>
+#image_808191990 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+					</div>
+
+	
+</div>
+<a class="button primary is-link update-promo"  >
+    <span>cập nhật tin khuyến mãi mới nhất</span>
+  </a>
+
+		</div>
+				
+<style>
+#col-363902582 > .col-inner {
+  margin: 0px 0px 30px 0px;
+  border-radius: 18px;
+}
+</style>
+	</div>
+
+	
+
+<style>
+#row-1837972613 > .col > .col-inner {
+  padding: 0px 0px 0px 0px;
+}
+</style>
+</div>
+<div class="row"  id="row-1156238268">
+
+	<div id="col-1849400158" class="col px-0 pb-2 small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+<div class="container section-title-container title-shbet" ><h2 class="section-title section-title-center"><b></b><span class="section-title-main" style="color:rgb(53, 126, 159);">link vào shbet chính thức</span><b></b></h2></div>
+		</div>
+				
+<style>
+#col-1849400158 > .col-inner {
+  padding: 0px 0px 0px 0px;
+}
+</style>
+	</div>
+
+	
+
+	<div id="col-287087153" class="col button lkn-main medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+<a class="button primary main-button"  >
+    <span>SHBET link 1 - link trang chủ shbet</span>
+  </a>
+
+<a href="https://shbet86.com/?a=2504031" class="button primary sub-button" rel="nofollow noopener" style="border-radius:10px;" target="_blank">
+    <span>Chơi Ngay</span>
+  </a>
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-1965491067" class="col button lkn-main medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+<a class="button primary main-button"  >
+    <span>SHBET link 2 - link trang chủ shbet</span>
+  </a>
+
+<a href="https://shbet86.com/?a=2504031" class="button primary sub-button" rel="nofollow noopener" style="border-radius:10px;" target="_blank">
+    <span>Chơi Ngay</span>
+  </a>
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-1006794357" class="col button lkn-main medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+<a class="button primary main-button"  >
+    <span>SHBET link 3 - link trang chủ shbet</span>
+  </a>
+
+<a href="https://shbet86.com/?a=2504031" class="button primary sub-button" rel="nofollow noopener" style="border-radius:10px;" target="_blank">
+    <span>Chơi Ngay</span>
+  </a>
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-312790371" class="col button lkn-main medium-6 small-12 large-6"  >
+				<div class="col-inner"  >
+			
+			
+<a class="button primary main-button"  >
+    <span>SHBET link 4 - link trang chủ shbet</span>
+  </a>
+
+<a href="https://shbet86.com/?a=2504031" class="button primary sub-button" rel="nofollow noopener" style="border-radius:10px;" target="_blank">
+    <span>Chơi Ngay</span>
+  </a>
+
+		</div>
+					</div>
+
+	
+</div>
+
+		</div>
+
+		
+<style>
+#section_1110872464 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+</style>
+	</section>
+	
+<div class="row"  id="row-2122023751">
+
+	<div id="col-1823643114" class="col px-0 small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+<div class="container section-title-container title-shbet bfaf1" ><h2 class="section-title section-title-center"><b></b><span class="section-title-main" style="color:rgb(53, 126, 159);">Đối Tác</span><b></b></h2></div>
+		</div>
+					</div>
+
+	
+
+	<div id="col-594750498" class="col px-0 small-12 large-12"  >
+				<div class="col-inner text-center"  >
+			
+			
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_69297988">
+								<div class="img-inner dark" >
+			<img decoding="async" width="1020" height="116" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201020%20116'%3E%3C/svg%3E" class="attachment-large size-large" alt="" data-lazy-srcset="https://shbet88.game/wp-content/uploads/2023/10/Capture-1024x116.png 1024w, https://shbet88.game/wp-content/uploads/2023/10/Capture-300x34.png 300w, https://shbet88.game/wp-content/uploads/2023/10/Capture-768x87.png 768w, https://shbet88.game/wp-content/uploads/2023/10/Capture-1536x174.png 1536w, https://shbet88.game/wp-content/uploads/2023/10/Capture.png 1902w" data-lazy-sizes="(max-width: 1020px) 100vw, 1020px" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Capture-1024x116.png" /><noscript><img decoding="async" width="1020" height="116" src="https://shbet88.game/wp-content/uploads/2023/10/Capture-1024x116.png" class="attachment-large size-large" alt="" srcset="https://shbet88.game/wp-content/uploads/2023/10/Capture-1024x116.png 1024w, https://shbet88.game/wp-content/uploads/2023/10/Capture-300x34.png 300w, https://shbet88.game/wp-content/uploads/2023/10/Capture-768x87.png 768w, https://shbet88.game/wp-content/uploads/2023/10/Capture-1536x174.png 1536w, https://shbet88.game/wp-content/uploads/2023/10/Capture.png 1902w" sizes="(max-width: 1020px) 100vw, 1020px" /></noscript>						
+					</div>
+								
+<style>
+#image_69297988 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+		</div>
+				
+<style>
+#col-594750498 > .col-inner {
+  padding: 10px 0px 10px 0px;
+}
+</style>
+	</div>
+
+	
+</div>
+
+					
+												</div>
+		</div>
+	</div>
+</div>
+
+
+
+    <div class="sv-container sv-block3" style="display: none;">
+        <form action="" method="POST" data-gtm-form-interact-id="0">
+        <div id="luckey-section" class="sv-block3_view-detail_images">
+                       <img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="slide" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 10" data-lazy-src="https://vnshbet.com/wp-content/uploads/2023/09/10000CODE-KM.jpg"><noscript><img decoding="async" src="https://vnshbet.com/wp-content/uploads/2023/09/10000CODE-KM.jpg" alt="slide" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 10"></noscript>
+        </div>
+        <div class="sv-block2-title-1">
+                        SHBET TRI ÂN CODE MIỄN PHÍ NGẪU NHIÊN CHO TẤT CẢ THÀNH VIÊN
+                    </div>
+        <div class="sv-block2-des-1">
+        <div class="">
+            Xin vui lòng đợi 60s để tránh tình trạng quá tải do lưu lượng truy cập quá lớn
+        </div>
+        </div>
+        <div class="sv-block2-title-1">
+            CHỌN LÌ XÌ MAY MẮN NGAY BÂY GIỜ !
+        </div>
+        <div id="luckeyNumber" style="font-size: 30px;color: red;font-weight: bold;"></div>
+        <div class="show_luckey_box01" style="display: flex;align-items: center; justify-content: center">
+                    <label data-luckey-index="0"><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 11" data-lazy-src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-1-1.png"><noscript><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-1-1.png" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 11"></noscript><input onclick="onGetLixiCodeClick(1);" style="display: none;" type="radio" name="code_luckey01" value="1"></label><br>
+                    <label data-luckey-index="1"><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 12" data-lazy-src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-2.png"><noscript><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-2.png" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 12"></noscript><input onclick="onGetLixiCodeClick(2);" style="display: none;" type="radio" name="code_luckey01" value="2"></label><br>
+                    <label data-luckey-index="2"><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 13" data-lazy-src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-3.png"><noscript><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-3.png" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 13"></noscript><input onclick="onGetLixiCodeClick(3);" style="display: none;" type="radio" name="code_luckey01" value="3"></label><br>
+                    <label data-luckey-index="3"><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 14" data-lazy-src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-4.png"><noscript><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-4.png" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 14"></noscript><input onclick="onGetLixiCodeClick(4);" style="display: none;" type="radio" name="code_luckey01" value="4" data-gtm-form-interact-field-id="0"></label><br>
+                    <label data-luckey-index="4"><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 15" data-lazy-src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-5.png"><noscript><img decoding="async" style="cursor: pointer;" class="lixi-mayman rung" src="https://vnshbet.com/wp-content/uploads/2023/09/Linh-vat-5.png" alt="Ưu đãi hấp dẫn từ SHBET" title="SHBET Casino ✔️ Link đăng ký, đăng nhập Shbet0 com mới nhất 15"></noscript><input onclick="onGetLixiCodeClick(5);" style="display: none;" type="radio" name="code_luckey01" value="5"></label>
+                    </div>
+        </form>
+    </div>
+    
+    <a class="popup-cskh scroll-to-div" href="#luckey-section" style="display: none; width: 70px; height: 50px; position: fixed; z-index: 10; right: 25px; bottom: 20px; cursor: pointer;">
+        <div class="tawk-min-container" style="">
+            <div class="tawk-custom-color tawk-custom-border-color tawk-button tawk-button-circle tawk-button-large" tabindex="0" style="bottom: 0px; left: 0px; position: absolute; z-index: 1000; border: 0px;">
+                <img style="" width="70" height="70" loading="lazy"  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2070%2070'%3E%3C/svg%3E" aria-label="Chọn để đi đến nhận lì xì" alt="Lì xì" data-lazy-src="https://shbet24h.com/wp-content/uploads/2023/12/lixi-icon.webp"><noscript><img style="" width="70" height="70" loading="lazy"  src="https://shbet24h.com/wp-content/uploads/2023/12/lixi-icon.webp" aria-label="Chọn để đi đến nhận lì xì" alt="Lì xì"></noscript>
+            </div>
+        </div>
+    </a>
+    <style>
+        .col {
+            margin-bottom: 0px !important;
+        }
+        
+        html, body {
+            overflow-x: unset ;
+        }
+        
+        .sv-block3 {
+            margin-top: -10px;
+        }
+        
+        .page-wrapper {
+            padding-bottom: 0px;
+        }
+        
+        .active .luckey_poind01 {
+            color: red;
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .luckey_poind01 {
+                transform: translate(32%,-108%);
+            }
+        }
+        
+        @media screen and (max-width: 849px) {
+            .col {
+                padding-bottom: 0px;
+            }
+        }
+        
+        @media screen and (max-width: 800px) {
+            .luckey_poind01 {
+                transform: translate(33%,-108%);
+            }
+        }
+    </style>
+
+</main>
+
+<footer id="footer" class="footer-wrapper">
+
+	
+	<section class="section" id="section_393812550">
+		<div class="bg section-bg fill bg-fill  bg-loaded" >
+
+			
+			
+			
+
+		</div>
+
+		
+
+		<div class="section-content relative">
+			
+
+<div class="row" style="max-width:1280px" id="row-521329351">
+
+
+	<div id="col-103033693" class="col medium-3 small-6 large-3"  >
+				<div class="col-inner text-center"  >
+			
+			
+
+	<div id="text-3716781480" class="text">
+		
+
+<h2>Về Chúng Tôi</h2>
+		
+<style>
+#text-3716781480 {
+  font-size: 1rem;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+#text-3716781480 > * {
+  color: rgb(255, 255, 255);
+}
+</style>
+	</div>
+	
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1182021962">
+								<div class="img-inner dark" >
+			<img width="1020" height="445" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201020%20445'%3E%3C/svg%3E" class="attachment-large size-large" alt="" decoding="async" data-lazy-srcset="https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy.png 1024w, https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy-300x131.png 300w, https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy-768x335.png 768w" data-lazy-sizes="(max-width: 1020px) 100vw, 1020px" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy.png" /><noscript><img width="1020" height="445" src="https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy.png" class="attachment-large size-large" alt="" decoding="async" srcset="https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy.png 1024w, https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy-300x131.png 300w, https://shbet88.game/wp-content/uploads/2023/10/shbet-logo-1024x447-copy-768x335.png 768w" sizes="(max-width: 1020px) 100vw, 1020px" /></noscript>						
+					</div>
+								
+<style>
+#image_1182021962 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+
+	<div id="text-3556499087" class="text">
+		
+
+<p>SHBET là thành viên Liên Minh OKVIP, thuộc top đầu những nhà cái uy tín nhất thị trường Việt Nam.</p>
+		
+<style>
+#text-3556499087 {
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+#text-3556499087 > * {
+  color: rgb(255, 255, 255);
+}
+</style>
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-963235409" class="col medium-3 small-6 large-3"  >
+				<div class="col-inner"  >
+			
+			
+
+	<div id="text-3138999921" class="text">
+		
+
+<h2>Sản Phẩm</h2>
+		
+<style>
+#text-3138999921 {
+  font-size: 1rem;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+#text-3138999921 > * {
+  color: rgb(255, 255, 255);
+}
+</style>
+	</div>
+	
+	<div class="ux-menu stack stack-col justify-start">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/the-thao" >
+						<span class="ux-menu-link__text">
+				THỂ THAO			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/da-ga" >
+						<span class="ux-menu-link__text">
+				ĐÁ GÀ			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/game-sieu-toc" >
+						<span class="ux-menu-link__text">
+				GAME SIÊU TỐC			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/casino" >
+						<span class="ux-menu-link__text">
+				CASINO			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/tro-choi" >
+						<span class="ux-menu-link__text">
+				TRÒ CHƠI			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/3d-casino" >
+						<span class="ux-menu-link__text">
+				3D CASINO			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/so-xo" >
+						<span class="ux-menu-link__text">
+				XỔ SỐ			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-1105162941" class="col medium-3 small-6 large-3"  >
+				<div class="col-inner"  >
+			
+			
+
+	<div id="text-2659458000" class="text">
+		
+
+<h2>Thêm</h2>
+		
+<style>
+#text-2659458000 {
+  font-size: 1rem;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+#text-2659458000 > * {
+  color: rgb(255, 255, 255);
+}
+</style>
+	</div>
+	
+	<div class="ux-menu stack stack-col justify-start">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/khuyen-mai" >
+						<span class="ux-menu-link__text">
+				KHUYẾN MÃI			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/facebook" >
+						<span class="ux-menu-link__text">
+				FACEBOOK			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/tiktok" >
+						<span class="ux-menu-link__text">
+				TIKTOK			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/youtube" >
+						<span class="ux-menu-link__text">
+				YOUTUBE			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/telegram" >
+						<span class="ux-menu-link__text">
+				TELEGRAM			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/phim-18" >
+						<span class="ux-menu-link__text">
+				PHIM 18+			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-638605479" class="col medium-3 small-6 large-3"  >
+				<div class="col-inner"  >
+			
+			
+
+	<div id="text-2855202311" class="text">
+		
+
+<h2>Trung Tâm Trợ Giúp</h2>
+		
+<style>
+#text-2855202311 {
+  font-size: 1rem;
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+#text-2855202311 > * {
+  color: rgb(255, 255, 255);
+}
+</style>
+	</div>
+	
+	<div class="ux-menu stack stack-col justify-start">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/lien-he" >
+						<span class="ux-menu-link__text">
+				LIÊN HỆ SHBET			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/dai-ly" >
+						<span class="ux-menu-link__text">
+				ĐẠI LÝ			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/chinh-sach-bao-mat" >
+						<span class="ux-menu-link__text">
+				CHÍNH SÁCH VÀ BẢO MẬT			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/dieu-khoan-dieu-kien" >
+						<span class="ux-menu-link__text">
+				ĐIỀU KHOẢN ĐIỀU KIÊN			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/cau-hoi-thuong-gap" >
+						<span class="ux-menu-link__text">
+				CÂU HỎI THƯỜNG GẶP			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/mien-trach-nhiem" >
+						<span class="ux-menu-link__text">
+				MIỄN TRÁCH NHIỆM			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://shbet86.com/?a=2504031/choi-co-trach-nhiem" >
+						<span class="ux-menu-link__text">
+				CHƠI CÓ TRÁCH NHIỆM			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+					</div>
+
+	
+
+	<div id="col-305934500" class="col small-12 large-12"  >
+				<div class="col-inner"  >
+			
+			
+
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_1205481754">
+								<div class="img-inner dark" >
+			<img width="1020" height="251" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201020%20251'%3E%3C/svg%3E" class="attachment-large size-large" alt="" decoding="async" data-lazy-srcset="https://shbet88.game/wp-content/uploads/2023/10/1-1024x252.png 1024w, https://shbet88.game/wp-content/uploads/2023/10/1-300x74.png 300w, https://shbet88.game/wp-content/uploads/2023/10/1-768x189.png 768w, https://shbet88.game/wp-content/uploads/2023/10/1.png 1314w" data-lazy-sizes="(max-width: 1020px) 100vw, 1020px" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/1-1024x252.png" /><noscript><img width="1020" height="251" src="https://shbet88.game/wp-content/uploads/2023/10/1-1024x252.png" class="attachment-large size-large" alt="" decoding="async" srcset="https://shbet88.game/wp-content/uploads/2023/10/1-1024x252.png 1024w, https://shbet88.game/wp-content/uploads/2023/10/1-300x74.png 300w, https://shbet88.game/wp-content/uploads/2023/10/1-768x189.png 768w, https://shbet88.game/wp-content/uploads/2023/10/1.png 1314w" sizes="(max-width: 1020px) 100vw, 1020px" /></noscript>						
+					</div>
+								
+<style>
+#image_1205481754 {
+  width: 100%;
+}
+</style>
+	</div>
+	
+
+
+		</div>
+					</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_393812550 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgb(9, 71, 99);
+}
+</style>
+	</section>
+	
+<div class="absolute-footer dark medium-text-center small-text-center">
+  <div class="container clearfix">
+
+    
+    <div class="footer-primary pull-left">
+            <div class="copyright-footer">
+        Design and Seo SHFC TRX Copyright 2024 © <strong>SHBET nhà cái uy tín hàng đầu thị trường game trực tuyến , nạp rút nhanh , ưu đã lớn , là nơi lý tưởng cho người dùng tham gia giải trí , đăng ký đăng nhập nhanh , ngoài ra rất nhiều sản phẩm trò chơi hấp dẫn hãy nhanh tay tham gia để được trải nghiệm dịch vụ tốt Reserved      </div>
+          </div>
+  </div>
+</div>
+
+<a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline hide-for-medium circle" id="top-link" aria-label="Go to top"><i class="icon-angle-up" ></i></a>
+
+</footer>
+
+</div>
+<style>
+    
+    #chat-widget-container {
+		bottom: 65px !important;
+		right: 5px !important;
+    }
+    
+    iframe {
+        z-index: 99;
+    }
+    
+</style>
+
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+
+	
+	<div class="sidebar-menu no-scrollbar ">
+
+		
+					<ul class="nav nav-sidebar nav-vertical nav-uppercase" data-tab="1">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-35 has-icon-left"><a href="https://shbet88.game" aria-current="page"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-8.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-8.png" alt="" /></noscript>HOME</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520 has-icon-left"><a href="https://shbet86.com/?a=2504031/casino/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-1.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-1.png" alt="" /></noscript>Casino</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-590 has-icon-left"><a href="https://shbet86.com/?a=2504031/so-xo/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group.png" alt="" /></noscript>Sổ Xố</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589 has-icon-left"><a href="https://shbet86.com/?a=2504031/the-thao/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group-1.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group-1.png" alt="" /></noscript>Thể Thao</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-588 has-icon-left"><a href="https://shbet86.com/?a=2504031/da-ga/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-2.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-2.png" alt="" /></noscript>Đá Gà</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-583 has-icon-left"><a href="https://shbet86.com/?a=2504031/tro-choi/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-3.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-3.png" alt="" /></noscript>Trò Chơi</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-582 has-icon-left"><a href="https://shbet86.com/?a=2504031/e-sport/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-4.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-4.png" alt="" /></noscript>E Sport</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587 has-icon-left"><a href="https://shbet88.game/khuyen-mai/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-5.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-5.png" alt="" /></noscript>Khuyến Mãi</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586 has-icon-left"><a href="https://shbet86.com/?a=2504031/dai-ly/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-6.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-6.png" alt="" /></noscript>Đại Lý</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585 has-icon-left"><a href="https://shbet86.com/?a=2504031/nhap-code/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-7.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-7.png" alt="" /></noscript>Nhập Code</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 has-icon-left"><a href="https://shbet86.com/?a=2504031/tin-tuc/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Union.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Union.png" alt="" /></noscript>Tin Tức</a></li>
+			</ul>
+		
+		
+	</div>
+
+	
+</div>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+jQuery(document).ready(function($) {
+    const seeMore = $(".seeMorebtn");
+    const contentDiv = $(".txt-viewmore");
+  	const text = contentDiv.text();
+
+    let isFullTextDisplayed = false;
+
+    function displayText() {
+      if (isFullTextDisplayed) {
+        contentDiv.text(text);
+        seeMore.text("...Thu gọn");
+      } else {
+        seeMore.text("...Xem Thêm");
+        contentDiv.text(text.substring(0, 120) + "...");
+      }
+
+      isFullTextDisplayed = !isFullTextDisplayed;
+    }
+
+    seeMore.on("click", displayText);
+
+    displayText();
+});
+});</script><style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #446084;--wp--preset--color--secondary: #d26e4b;--wp--preset--color--success: #7a9c59;--wp--preset--color--alert: #b20000;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: none;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-color{color: var(--wp--preset--color--primary) !important;}.has-secondary-color{color: var(--wp--preset--color--secondary) !important;}.has-success-color{color: var(--wp--preset--color--success) !important;}.has-alert-color{color: var(--wp--preset--color--alert) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-background-color{background-color: var(--wp--preset--color--primary) !important;}.has-secondary-background-color{background-color: var(--wp--preset--color--secondary) !important;}.has-success-background-color{background-color: var(--wp--preset--color--success) !important;}.has-alert-background-color{background-color: var(--wp--preset--color--alert) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-primary-border-color{border-color: var(--wp--preset--color--primary) !important;}.has-secondary-border-color{border-color: var(--wp--preset--color--secondary) !important;}.has-success-border-color{border-color: var(--wp--preset--color--success) !important;}.has-alert-border-color{border-color: var(--wp--preset--color--alert) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/shbet88.game","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://shbet88.game/wp-includes/js/hoverIntent.min.js?ver=1.10.2" id="hoverIntent-js" defer></script>
+<script type="text/javascript" id="flatsome-js-js-extra">
+/* <![CDATA[ */
+var flatsomeVars = {"theme":{"version":"3.18.1"},"ajaxurl":"https:\/\/shbet88.game\/wp-admin\/admin-ajax.php","rtl":"","sticky_height":"70","stickyHeaderHeight":"0","scrollPaddingTop":"0","assets_url":"https:\/\/shbet88.game\/wp-content\/themes\/flatsome\/assets\/","lightbox":{"close_markup":"<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"><\/line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"><\/line><\/svg><\/button>","close_btn_inside":false},"user":{"can_edit_pages":false},"i18n":{"mainMenu":"Main Menu","toggleButton":"Toggle"},"options":{"cookie_notice_version":"1","swatches_layout":false,"swatches_disable_deselect":false,"swatches_box_select_event":false,"swatches_box_behavior_selected":false,"swatches_box_update_urls":"1","swatches_box_reset":false,"swatches_box_reset_limited":false,"swatches_box_reset_extent":false,"swatches_box_reset_time":300,"search_result_latency":"0"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://shbet88.game/wp-content/cache/min/1/wp-content/themes/flatsome/assets/js/flatsome.js?ver=1713022527" id="flatsome-js-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://shbet88.game/wp-content/cache/min/1/wp-content/themes/flatsome/inc/integrations/wp-rocket/flatsome-wp-rocket.js?ver=1713022527" id="flatsome-wp-rocket-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://shbet88.game/wp-content/cache/min/1/wp-content/themes/flatsome/inc/extensions/flatsome-live-search/flatsome-live-search.js?ver=1713022527" id="flatsome-live-search-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://shbet88.game/wp-content/themes/flatsome/assets/js/sweetalert2.min.js?ver=6.5.2" id="sweetalert2-js-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://shbet88.game/wp-content/cache/min/1/wp-content/themes/flatsome/assets/js/recaptcha__en.js?ver=1713022527" id="recaptcha__en-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=vi&amp;ver=6.5.2" id="recaptcha_api-js"></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://shbet88.game/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><!-- Start of LiveChat (www.livechat.com) code -->
+
+<!-- Start of LiveChat (www.livechat.com) code -->
+<script type="rocketlazyloadscript">
+    window.__lc = window.__lc || {};
+    window.__lc.license = 14657076;
+    ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
+</script>
+<noscript><a href="https://www.livechat.com/chat-with/14657076/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<!-- End of LiveChat code -->
+
+<script type="rocketlazyloadscript" data-minify="1" src="https://shbet88.game/wp-content/cache/min/1/wp-content/themes/flatsome/assets/js/to-string-array.js?ver=1713022527" defer></script>
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+
+	
+	<div class="sidebar-menu no-scrollbar ">
+
+		
+					<ul class="nav nav-sidebar nav-vertical nav-uppercase" data-tab="1">
+				<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-35 has-icon-left"><a href="https://shbet88.game" aria-current="page"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-8.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-8.png" alt="" /></noscript>HOME</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-520 has-icon-left"><a href="https://shbet86.com/?a=2504031/casino/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-1.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-1.png" alt="" /></noscript>Casino</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-590 has-icon-left"><a href="https://shbet86.com/?a=2504031/so-xo/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group.png" alt="" /></noscript>Sổ Xố</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-589 has-icon-left"><a href="https://shbet86.com/?a=2504031/the-thao/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group-1.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Mask-group-1.png" alt="" /></noscript>Thể Thao</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-588 has-icon-left"><a href="https://shbet86.com/?a=2504031/da-ga/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-2.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-2.png" alt="" /></noscript>Đá Gà</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-583 has-icon-left"><a href="https://shbet86.com/?a=2504031/tro-choi/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-3.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-3.png" alt="" /></noscript>Trò Chơi</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-582 has-icon-left"><a href="https://shbet86.com/?a=2504031/e-sport/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-4.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-4.png" alt="" /></noscript>E Sport</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-587 has-icon-left"><a href="https://shbet86.com/?a=2504031/khuyen-mai/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-5.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-5.png" alt="" /></noscript>Khuyến Mãi</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-586 has-icon-left"><a href="https://shbet86.com/?a=2504031/dai-ly/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-6.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-6.png" alt="" /></noscript>Đại Lý</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-585 has-icon-left"><a href="https://shbet86.com/?a=2504031/nhap-code/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Vector-7.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Vector-7.png" alt="" /></noscript>Nhập Code</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 has-icon-left"><a href="https://shbet86.com/?a=2504031/tin-tuc/"><img class="ux-sidebar-menu-icon" width="20" height="20" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2020%2020'%3E%3C/svg%3E" alt="" data-lazy-src="https://shbet88.game/wp-content/uploads/2023/10/Union.png" /><noscript><img class="ux-sidebar-menu-icon" width="20" height="20" src="https://shbet88.game/wp-content/uploads/2023/10/Union.png" alt="" /></noscript>Tin Tức</a></li>
+			</ul>
+		
+		
+	</div>
+
+	
+</div>
+<script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+jQuery(document).ready(function($) {
+    const seeMore = $(".seeMorebtn");
+    const contentDiv = $(".txt-viewmore");
+  	const text = contentDiv.text();
+
+    let isFullTextDisplayed = false;
+
+    function displayText() {
+      if (isFullTextDisplayed) {
+        contentDiv.text(text);
+        seeMore.text("...Thu gọn");
+      } else {
+        seeMore.text("...Xem Thêm");
+        contentDiv.text(text.substring(0, 120) + "...");
+      }
+
+      isFullTextDisplayed = !isFullTextDisplayed;
+    }
+
+    seeMore.on("click", displayText);
+
+    displayText();
+});
+});</script><script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://shbet88.game/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+
+$(".scroll-to-div").on('click', function(e) {
+    e.preventDefault();
+    var id = $(this).attr('href');
+    if ($(id).length > 0) {
+        $('html,body').animate({
+            scrollTop: $(id).offset().top - 150
+        }, 500);
+    }
+});
+ 
+function closePopup() {
+    $('.modal__bg').hide();
+    localStorage.removeItem('code_luckey');
+    localStorage.removeItem('luckeyMoney');
+};
+
+$('.btn-closeProcess').hide();
+$('.code-title__content').hide();
+
+
+async function onGetLixiCodeClick(indexLixi) {
+    let url = '';
+    let idUser = '';
+    let reCapchaConfirm;
+    let stringText = '';
+    var numberLuckey = [];
+    
+    var elShowLuckeyDefault =`<label class='wp-luckey'><img style='cursor: pointer;' class='lixi-mayman rung' src='https://shbet24h.com/wp-content/uploads/2023/12/Linh-vat-1.png'/><input onclick='onGetLixiCodeClick(1);' style='display: none;' type='radio' name='code_luckey01'></label>
+    <label class='wp-luckey'><img style='cursor: pointer;' class='lixi-mayman rung' src='https://shbet24h.com/wp-content/uploads/2023/12/Linh-vat-2.png'/><input onclick='onGetLixiCodeClick(2);' style='display: none;' type='radio' name='code_luckey01'></label>
+    <label class='wp-luckey'><img style='cursor: pointer;' class='lixi-mayman rung' src='https://shbet24h.com/wp-content/uploads/2023/12/Linh-vat-3.png'/><input onclick='onGetLixiCodeClick(3);' style='display: none;' type='radio' name='code_luckey01'></label>
+    <label class='wp-luckey'><img style='cursor: pointer;' class='lixi-mayman rung' src='https://shbet24h.com/wp-content/uploads/2023/12/Linh-vat-4.png'/><input onclick='onGetLixiCodeClick(4);' style='display: none;' type='radio' name='code_luckey01'></label>
+    <label class='wp-luckey'><img style='cursor: pointer;' class='lixi-mayman rung' src='https://shbet24h.com/wp-content/uploads/2023/12/Linh-vat-5.png'/><input onclick='onGetLixiCodeClick(5);' style='display: none;' type='radio' name='code_luckey01'></label>`;
+    $('.show_luckey_box').html(elShowLuckeyDefault);
+    
+    $('.modal__bg').show();
+    $('.btn-closeProcess').hide();
+    $('.code-title__content').hide();
+    $('.code-title__content-defauld').show();
+    $('#header').css('z-index', '1');
+    $('#footer').css('z-index', '0');
+                
+    const steps = ['1', '2', '3', '4']
+    const Queue = Swal.mixin({
+        progressSteps: steps,
+        // optional classes to avoid backdrop blinking between steps
+        showClass: { backdrop: 'swal2-noanimation' },
+        hideClass: { backdrop: 'swal2-noanimation' }
+    });
+
+    await Queue.fire({
+        title: 'Nhập vào tài khoản',
+        html : '<span style="color: #f11">Hệ thống phân biệt viết Hoa viết thường <br/>cần điền chính xác để nhận lì xì</span>',
+        input: 'text',
+        currentProgressStep: 0,
+        confirmButtonText: 'Tiếp tục',
+        // optional class to show fade-in backdrop animation which was disabled in Queue mixin
+        showClass: {
+            backdrop: 'swal2-noanimation'
+        },
+        preConfirm: function(input) {
+            if (input === "") {
+                Swal.showValidationMessage(`Vui lòng nhập tên tài khoản`);
+            }
+        },
+    }).then(async (input) => {
+        if (input.isConfirmed) {
+            url += input.value;
+            idUser = input.value;
+           
+            let myHeaderGet = new Headers();
+            myHeaderGet.append("Content-Type", "application/json");
+        
+            let requestOptionsGet = {
+                method: 'POST',
+                headers: myHeaderGet,
+                cache: 'no-cache',
+                body: JSON.stringify({ action : "test", inputVal : input.value }),
+            };
+        
+            await fetch("https://shbet24h.com/wp-content/themes/flatsome/api/recapcha.php", requestOptionsGet)
+                .then((response) => response.json())
+                .then((result) => {
+                    localStorage.setItem('stringText', getStringValue(result));
+                }).catch((error) => {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Lỗi hệ thống !",
+                        text: "Mất kết nối đến máy chủ, vui lòng thử lại",
+                    });
+                });
+        
+        } else {
+            resolve();
+        }
+    });
+
+    await Queue.fire({
+        title: 'Xác minh trình duyệt',
+        html: '<div id="g-recaptcha"></div>',
+        didOpen: () => {
+            
+            grecaptcha.render('g-recaptcha', {
+                'sitekey': localStorage.getItem("stringText"),
+            })
+        },
+        preConfirm: function(value) {
+            if (grecaptcha.getResponse().length === 0) {
+                Swal.showValidationMessage(`Please verify that you're not a robot`);
+            }
+        },
+        currentProgressStep: 1,
+        confirmButtonText: 'Tiếp tục',
+    }).then(input => {
+        if (input.isConfirmed) {
+            reCapchaConfirm = grecaptcha.getResponse();
+        } else {
+            resolve();
+        }
+    });
+
+    await Queue.fire({
+        currentProgressStep: 2,
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        confirmButtonText: 'Tiếp tục',
+        html: 'Hãy kiên nhẫn chờ đợi CODE miễn phí <br/>sẽ xuất hiện sau <strong style="color: #f11"></strong> giây.<br/><br/>',
+        timer: 60000,
+        didOpen: () => {
+            Swal.showLoading()
+            timerInterval = setInterval(async () => {
+                let number = Swal.getHtmlContainer().querySelector('strong')
+                .textContent = (Swal.getTimerLeft() / 1000)
+                  .toFixed(0)
+            }, 1000)
+            
+        },
+        willClose: () => {
+            clearInterval(timerInterval)
+        }
+    });
+    
+    await Queue.fire({
+        title: '',
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        currentProgressStep: 3,
+        showClass: {
+            backdrop: 'swal2-noanimation'
+        },
+        didOpen: async () => {
+            Swal.showLoading();
+            let myHeader = new Headers();
+            myHeader.append("Content-Type", "application/json");
+
+            let requestOptions = {
+                method: 'GET',
+                headers: myHeader,
+                cache: 'no-cache',
+            };
+
+            await fetch('https://code.appnew88.com/api/web/getSEOCode?site=shbet&player_id=' + idUser + '&encryptedkey=' + reCapchaConfirm , requestOptions)
+                .then((response) => response.json())
+                .then((result) => {
+                    
+                    if (result) {
+                        if (parseInt(result.status_code) !== 200) {
+                            
+                            Swal.fire({
+                                title: result.title_mess,
+                                text: result.text_mess,
+                                confirmButtonText: 'Thoát',
+                            });
+                            closePopup();
+                            
+                        } else {
+                           
+                            Swal.close();
+                            navigator.clipboard.writeText(result.code);
+                                                
+                            localStorage.setItem('code_luckey', result.code);
+                            localStorage.setItem('luckeyMoney', result.value);
+                            var elShowLuckey = "";
+                            var codeShow = localStorage.getItem('code_luckey');
+                            var showLixiMoney = localStorage.getItem('luckeyMoney');
+                            
+                            numberLuckey = getNumberLuckey();
+                            numberLuckey.splice(indexLixi - 1,0,codeShow);
+                            
+                            if (numberLuckey) {
+                                for (var i = 0; i < numberLuckey.length; i++) {
+                                    if (numberLuckey[i] == localStorage.getItem('code_luckey')) {
+                                        elShowLuckey +="<label class='wp-luckey active'><img style='cursor: pointer;' class='lixi-mayman rung2' src='https://shbet24h.com/wp-content/uploads/2023/12/Li-xi-mo-" + ( i + 1 ) + ".png'/><div class='luckey_poind01'>" + showLixiMoney + "</div></label>";
+                                    }
+                                }
+                                
+                                $('.btn-closeProcess').show();
+                                $('.code-title__content').show();
+                                $('.code-title__content-defauld').hide();
+                                $('.code_here').text(codeShow);
+                                $('.poind_here').text(showLixiMoney)
+                                $('.modal__bg').show();
+                                $('.show_luckey_box').html(elShowLuckey);
+                            }
+                        }
+                    }
+
+                }).catch((error) => {
+                    Swal.fire({
+                        icon: "warning",
+                        title: "Lỗi hệ thống !",
+                        text: "Mất kết nối đến máy chủ, vui lòng thử lại",
+                    });
+                });
+        }
+    });
+}
+    
+async function onGetCloseProcess() {
+    var copyText = localStorage.getItem('code_luckey');
+    await navigator.clipboard.writeText(copyText);
+    
+    $('.modal__bg').hide();
+    localStorage.removeItem('code_luckey');
+    localStorage.removeItem('luckeyMoney');
+    localStorage.removeItem("stringText")
+    
+    $('.btn-closeProcess').hide();
+    $('.code-title__content').hide();
+    $('.code-title__content-defauld').show();
+    $('#header').css('z-index', '101');
+    $('#footer').css('z-index', '101');
+}
+
+});</script>
+
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
